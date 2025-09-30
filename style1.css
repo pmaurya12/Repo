@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+.navbar{
+    height: 10vh;
+    display: flex;
+}
+img{
+    height: 10vh;
+    margin-left: 2vh;
+}
+.input{
+    display: flex;
+    height: 8vh;
+    align-items: center;
+    margin-left: 10px;
+}
+input{
+    width: 50vw;
+    height: 5vh;
+    margin-top: 1vh;
+    border-radius: 10px;
+    border-color: white;
+    background-color: aliceblue;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+}
+.btn{
+    border: 2px solid black;
+    height: 10px;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+    border-color: white;
+    font-size: 20px;
+}
+i{
+    margin-left: 5px;
+    font-size: x-large;
+    margin-top: 1vh;
+}

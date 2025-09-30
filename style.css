@@ -1,0 +1,83 @@
+.navbar{
+    height: 5rem;
+    background-color: pink;
+    margin-bottom: 10px;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}.f-info{
+    height: 8rem;
+    background-color: rgb(157, 157, 157);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.f-info-socials{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.listings{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+   border: none !important;
+   margin-bottom: 2rem; 
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    height: 20rem;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 3px !important;
+}
+.row > a {
+    width: auto;
+    text-decoration: none;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: pink;
+}
+
+.form-label {
+  margin-bottom: 2px !important;
+}
+.add-btn{
+    background-color: magenta !important;
+    color: white !important;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+
+.show-img{
+    height: 30vh !important;
+}
+.btns{
+    display: flex;
+    gap: 5rem;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #btn{
+      height:400px;
+      width:400px;
+      background-color: burlywood;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="btn">
+    <button onclick="abes()" >click</button>
+    <p id="aaa"></p>
+
+    <button onclick="red()">red</button>
+    <button onclick="green()">green</button>
+    <button onclick="blue()">blue</button>
+  </div>
+  <script>
+    function red(){
+      document.getElementById("btn").style.background="red";
+    }
+
+    function green(){
+      document.getElementById("btn").style.background="green";
+    }
+
+    function blue(){
+      document.getElementById("btn").style.background="blue";
+    }
+    function abes(){
+      document.getElementById("aaa").innerHTML="hello";
+    }
+
+//    var a=10, b=2;
+//    function add(){
+ //     document.writeln(a+b);
+//    }
+//    add();
+
+   // function sub(){
+    //  document.writeln(a-b);
+    //}
+    //sub(); 
+  </script>
+  
+</body>
+</html>

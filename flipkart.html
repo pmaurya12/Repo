@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flipkart - Topbar & Nav (Flex + Grid)</title>
+  <style>
+    :root{--blue:#2874f0;--muted:#f3f6fb;--text:#111}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial;background:#fff;color:var(--text)}
+
+    
+    .topbar{display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid #eef2f8;background:#fff;position:sticky;top:0;z-index:40}
+    .brand{display:flex;align-items:center;gap:12px;min-width:170px}
+    .logo{background:linear-gradient(90deg,#2d7ef7,#1456d6);color:#fff;padding:8px 12px;border-radius:6px;font-weight:700}
+    .brand .meta{display:flex;flex-direction:column}
+    .brand .meta small{color:#6b7280;font-size:12px}
+
+    .search-wrap{flex:1}
+    .search{display:flex;align-items:center;background:var(--muted);padding:8px;border-radius:6px;border:1px solid #e6f0ff}
+    .search input{flex:1;border:0;background:transparent;padding:8px;font-size:15px;outline:none}
+    .search button{border:0;background:transparent;color:var(--blue);font-weight:700;cursor:pointer;padding:6px}
+
+    .actions{display:flex;align-items:center;gap:16px}
+    .actions .item{display:flex;flex-direction:column;align-items:center;font-size:13px;color:#333;cursor:pointer}
+    .cart{position:relative}
+    .cart .count{position:absolute;top:-6px;right:-6px;background:#ff3b30;color:#fff;padding:2px 6px;border-radius:999px;font-size:11px}
+
+    
+    .nav-wrap{padding:10px 16px;border-bottom:1px solid #f0f2f7;background:#fff}
+    .nav-scroll{overflow-x:auto}
+    .nav-grid{display:grid;grid-auto-flow:column;grid-auto-columns:min-content;gap:22px;align-items:center;padding:8px}
+    .nav-item{display:flex;flex-direction:column;align-items:center;min-width:92px;padding:6px 6px;border-radius:8px}
+    .nav-item img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+    .nav-item span{margin-top:8px;font-size:13px;color:#222}
+
+    
+    @media (max-width:900px){.brand{min-width:120px}.nav-grid{gap:14px}}
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Flipkart</div>
+      <div class="meta"><strong style="font-size:14px">Explore Plus</strong><small>Great deals on top brands</small></div>
+    </div>
+
+    <div class="search-wrap">
+      <div class="search" role="search">
+        <input id="searchInput" placeholder="Search for Products, Brands and More" aria-label="Search" />
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+
+    <div class="actions" role="navigation">
+      <div class="item" title="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zM3 21c0-3.866 3.582-7 9-7s9 3.134 9 7" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Account</span>
+      </div>
+      <div class="item">More</div>
+      <div class="item cart" id="cartBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6h15l-1.5 9h-12z" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1" fill="#333"/><circle cx="18" cy="20" r="1" fill="#333"/></svg>
+        <span>Cart</span>
+        <div class="count" id="cartCount">1</div>
+      </div>
+    </div>
+  </header>
+
+  
+  <nav class="nav-wrap">
+    <div class="nav-scroll">
+      <div class="nav-grid" role="list">
+        <div class="nav-item" role="listitem">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23ffd54f'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='13' font-family='Arial' fill='%23000'>Minutes</text></svg>" alt="minutes">
+          <span>Minutes</span>
+        </div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23e1f5fe'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='12' font-family='Arial' fill='%23000'>Mobiles</text></svg>" alt="mobiles"><span>Mobiles & Tablets</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23e8f5e9'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='12' font-family='Arial' fill='%23000'>Fashion</text></svg>" alt="fashion"><span>Fashion</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23fff3e0'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='11' font-family='Arial' fill='%23000'>Electronics</text></svg>" alt="electronics"><span>Electronics</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23fce4ec'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='11' font-family='Arial' fill='%23000'>Home</text></svg>" alt="home"><span>Home & Furniture</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23ede7f6'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='11' font-family='Arial' fill='%23000'>TVs</text></svg>" alt="tvs"><span>TVs & Appliances</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23e3f2fd'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='11' font-family='Arial' fill='%23000'>Flights</text></svg>" alt="flights"><span>Flight Bookings</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23fff8e1'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='10' font-family='Arial' fill='%23000'>Beauty</text></svg>" alt="beauty"><span>Beauty, Food..</span></div>
+        <div class="nav-item"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='56' height='56' rx='8' fill='%23e8f5e9'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='10' font-family='Arial' fill='%23000'>Grocery</text></svg>" alt="grocery"><span>Grocery</span></div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    document.getElementById('searchBtn').addEventListener('click', ()=>alert('Search: '+(document.getElementById('searchInput').value||'[empty]')));
+    document.getElementById('cartBtn').addEventListener('click', ()=>{
+      const c = document.getElementById('cartCount'); c.textContent = parseInt(c.textContent||'0')+1;
+    });
+  </script>
+</body>
+</html>
